@@ -39,7 +39,7 @@ class Player
 
 class Bubble
 {
-    constructor(bx, by, spd, rad)
+    constructor(bx, by, spd, rad, seed)
     {
         this.position = {
             x: bx,
@@ -49,12 +49,15 @@ class Bubble
         this.speed = spd
         this.radius = rad
 
+        this.seed = seed
+
         this.popped = false
     }
 
     frame()
     {
         this.position.x -= this.speed
+        this.position.y += Math.sin(Date.now()/500 + this.seed)*1
         !this.popped && this.draw()
     }
 
