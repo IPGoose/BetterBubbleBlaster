@@ -106,6 +106,12 @@ function isCollide(bubble) {
 function mainLoop()
 {
     ctx.clearRect(0, 0, WIDTH, HEIGHT)
+    
+    if (keys.left)  player.move(-SHIPSPD, 0)
+    if (keys.right) player.move( SHIPSPD, 0)
+    if (keys.up)    player.move(0, -SHIPSPD)
+    if (keys.down)  player.move(0, SHIPSPD)
+    
     player.draw()
 
     bubList.forEach(bubble => {
