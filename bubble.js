@@ -69,7 +69,8 @@ function newBubble()
         WIDTH + GAP,
         Math.floor(Math.random() * HEIGHT),
         speed / 2,
-        35 - speed
+        35 - speed,
+        Math.random() * Math.PI
     ))
 }
 
