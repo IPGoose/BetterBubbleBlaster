@@ -17,7 +17,7 @@ const WIDTH = 800
     , ctx = canvas.getContext("2d")
 
     , SHIPR = 15
-    , SHIPSPD = 10
+    , SHIPSPD = 5
 
     , TIMELIMIT = 30
 
