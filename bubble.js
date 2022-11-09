@@ -37,10 +37,10 @@ var bubList = []
   , canRetry = false
   , player = new Player(center.x, center.y)
   , keys = {
-    "up": false,
-    "down": false,
-    "left": false,
-    "right": false
+    up: false,
+    down: false,
+    left: false,
+    right: false
   }
 
 
