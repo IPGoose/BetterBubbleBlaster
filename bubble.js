@@ -36,6 +36,12 @@ var bubList = []
   , popped = 0
   , canRetry = false
   , player = new Player(center.x, center.y)
+  , keys = {
+    "up": false,
+    "down": false,
+    "left": false,
+    "right": false
+  }
 
 
 ctx.font = "32px monospace"
@@ -149,15 +155,26 @@ document.addEventListener("keydown", event => {
     // woah guess what python doesnt have! SWITCH STATEMENTS
     switch (event.code)
     {
-        case "ArrowUp":    player.move(0,       -SHIPSPD); break
-        case "ArrowDown":  player.move(0,        SHIPSPD); break
-        case "ArrowLeft":  player.move(-SHIPSPD, 0      ); break
-        case "ArrowRight": player.move( SHIPSPD, 0      ); break
+        case "ArrowUp":    keys.up    = true; break
+        case "ArrowDown":  keys.down  = true; break
+        case "ArrowLeft":  keys.left  = true; break
+        case "ArrowRight": keys.right = true; break
 
         case "Space": canRetry && retry(); break
         case "Enter": canRetry && retry(); break
     }
 })
 
+document.addEventListener("keyup", event => {
+
+    // woah guess what python doesnt have! SWITCH STATEMENTS
+    switch (event.code)
+    {
+        case "ArrowUp":    keys.up    = false; break
+        case "ArrowDown":  keys.down  = false; break
+        case "ArrowLeft":  keys.left  = false; break
+        case "ArrowRight": keys.right = false; break
+    }
+})
 // start main loop
 requestAnimationFrame(mainLoop)
